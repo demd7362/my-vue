@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>과일 목록</h2>
+    <div>
+        <ul id="foodUl"></ul>
+
+    </div>
+
+    <script>
+        window.addEventListener('load',async()=>{
+            const response = await fetch('http://localhost:3300/test');
+            const foods = await response.json();
+            const foodUl = document.getElementById('foodUl');
+            let html = '';
+            for(const food of foods){
+                const li = document.createElement('li');
+                li.innerText = `${food.name} : ${food.price}`;
+                foodUl.appendChild(li); 
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

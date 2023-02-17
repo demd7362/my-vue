@@ -27,6 +27,8 @@ let counter = ()=>{
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/calc">Calculator</RouterLink>
+        <RouterLink to="/foods">Food List</RouterLink>
+        
       </nav>
     </div>
   </header>
